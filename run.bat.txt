@@ -1,0 +1,2 @@
+cd C:\Users\em21154\eclipse-workspace\Adactin
+mvn test
