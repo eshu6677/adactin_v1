@@ -10,19 +10,17 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class excelData {
 	
-	FileInputStream fis;
 	
-	public static String testData(String SheetName,int rowNumber,int cellNmuber) throws IOException {
-	FileInputStream fis;
-
-			fis = new FileInputStream("‪C:\\Users\\em21154\\Documents\\testdata.xlsx");
+	
+	public static String testData(String SheetName,int rowNumber,int cellNmuber) throws EncryptedDocumentException, IOException {
+	
+		FileInputStream 	fis = new FileInputStream("‪C:\\Users\\em21154\\Documents\\testdata.xlsx");
 		
-        Workbook w;
+	        Workbook w = WorkbookFactory.create(fis);
+			
 		
-			w = WorkbookFactory.create(fis);
-		
-        String s = w.getSheet(SheetName).getRow(rowNumber).getCell(cellNmuber).getStringCellValue();
-        return s;
+     String s = w.getSheet(SheetName).getRow(rowNumber).getCell(cellNmuber).getStringCellValue();
+  return s;
         
 	}
 
